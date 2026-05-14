@@ -1,13 +1,10 @@
-{
-  "id": "org.koc.vnaddon",
-  "version": "1.0.0",
-  "name": "VN Movie Sources",
-  "description": "Stremio addon cho OPhim, PhimAPI, NguonC",
-  "resources": ["stream"],
-  "types": ["movie", "series"],
-  "idPrefixes": ["tt"],
-  "catalogs": [],
-  "behaviorHints": {
-    "configurable": false
-  }
-}
+const manifest = {
+    id: "org.koc.vnaddon",
+    version: "1.0.0",
+    name: "VN Movie Sources",
+    description: "Addon cho OPhim / PhimAPI / NguonC",
+    resources: ["stream"],
+    types: ["movie", "series"],
+    idPrefixes: ["tt"],
+    catalogs: []
+};
