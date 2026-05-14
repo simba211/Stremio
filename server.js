@@ -1,5 +1,3 @@
-const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
-
 const manifest = {
     id: "org.koc.vnaddon",
     version: "1.0.0",
@@ -7,28 +5,17 @@ const manifest = {
     description: "Addon cho OPhim / PhimAPI / NguonC",
     resources: ["stream"],
     types: ["movie", "series"],
-    idPrefixes: ["tt"]
+    idPrefixes: ["tt"],
+    catalogs: []
 };
 
 const builder = new addonBuilder(manifest);
 
-builder.defineStreamHandler(async ({ type, id }) => {
-
-    // TODO:
-    // Tự map IMDb -> slug phim VN
-
+builder.defineStreamHandler(async () => {
     return {
         streams: [
             {
-                title: "OPhim",
-                url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-            },
-            {
-                title: "PhimAPI",
-                url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-            },
-            {
-                title: "NguonC",
+                title: "VN Source Test",
                 url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
             }
         ]
@@ -37,4 +24,4 @@ builder.defineStreamHandler(async ({ type, id }) => {
 
 serveHTTP(builder.getInterface(), { port: 7000 });
 
-console.log("Addon running on http://localhost:7000/manifest.json");
+console.log("Addon running");
